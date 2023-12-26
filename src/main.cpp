@@ -7,7 +7,7 @@
 int main(int argc, char const *argv[]) {
     int sudoku[SUDOKU_SIZE][SUDOKU_SIZE];
     
-    generateSudoku(sudoku);
+    generateSudoku(sudoku, 1);
     printSudoku(sudoku);
 
     return 0;
