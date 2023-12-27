@@ -9,20 +9,20 @@
  * 
  * @param sudoku The Sudoku grid to be printed.
  */
-void printSudoku(int sudoku[][SUDOKU_SIZE]) {
+void printSudoku(int sudoku[][SUDOKU_SIZE], bool nCurses) {
     std::string hLine = "", vLine = "", textLine = "";
 
     for(int i  = 0; i < SUDOKU_SIZE; i++) {
         hLine = " -";
-        vLine = "|";
+        // vLine = "|";
         textLine = "|";
 
         for(int j = 0; j < SUDOKU_SIZE; j++) {
             std::string number = sudoku[i][j] == EMPTY_CELL ? " " : std::to_string(sudoku[i][j]);
 
-            textLine += "   " + number + "  |";
-            hLine += "-------";
-            vLine += "      |";
+            textLine += " " + number + " |";
+            hLine += "----";
+            // vLine += "      |";
 
             if(j != SUDOKU_SIZE - 1 && j % 3 == 2) {
                 vLine += "|";
@@ -33,13 +33,24 @@ void printSudoku(int sudoku[][SUDOKU_SIZE]) {
         if(i % 3 == 0 && i != 0) {
             std::replace(hLine.begin(), hLine.end(), '-', '=');
         }
-
-        std::cout << hLine << std::endl;
-        std::cout << vLine << std::endl;
-        std::cout << textLine << std::endl;
-        std::cout << vLine << std::endl;
+        
+        if(nCurses == true) {
+            printw("%s\n", hLine.c_str());
+            // printw("%s\n", vLine.c_str());
+            printw("%s\n", textLine.c_str());
+            // printw("%s\n", vLine.c_str());
+        }
+        else {
+            std::cout << hLine << "\n";
+            // std::cout << vLine << "\n";
+            std::cout << textLine << "\n";
+            // std::cout << vLine << "\n";
+        }
     }
-    std::cout << hLine << std::endl;
+    if(nCurses == true)
+        printw("%s\n", hLine.c_str());
+    else
+        std::cout << hLine << "\n";
 }
 
 /*

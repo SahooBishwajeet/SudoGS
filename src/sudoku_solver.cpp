@@ -2,7 +2,7 @@
 #include "fill_grid.h"
 #include "print.h"
 
-void sudokuSolver(int sudoku[][SUDOKU_SIZE]) {
+void sudokuSolver(int sudoku[][SUDOKU_SIZE], bool allVals) {
     int solved[SUDOKU_SIZE][SUDOKU_SIZE];
     for(int i = 0; i < SUDOKU_SIZE; i++) {
         for(int j = 0; j < SUDOKU_SIZE; j++) {
@@ -11,7 +11,7 @@ void sudokuSolver(int sudoku[][SUDOKU_SIZE]) {
     }
 
     // To generate all possible solutions, set the 2nd parameter to true
-    helper(solved, true);
+    helper(solved, allVals);
 }
 
 void helper(int sudoku[][SUDOKU_SIZE], bool allVals) {
@@ -34,6 +34,6 @@ void helper(int sudoku[][SUDOKU_SIZE], bool allVals) {
 
     if (!allVals && solutionCount > 0) return;
 
-    printSudoku(sudoku);
+    printSudoku(sudoku, true);
     solutionCount++;
 }
