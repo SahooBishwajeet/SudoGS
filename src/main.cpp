@@ -9,6 +9,13 @@
 #define SUDOKU_SIZE 9
 #define EMPTY_CELL 0
 
+/**
+ * @brief The main function of the program.
+ * 
+ * @param argc The number of command-line arguments.
+ * @param argv An array of strings containing the command-line arguments.
+ * @return int The exit status of the program.
+ */
 int main(int argc, const char **argv) {
     
     if(strcmp(argv[0], argv[argc - 1]) == 0) {

@@ -1,5 +1,13 @@
 #include "cli.h"
 
+/**
+ * @brief Command line interface function.
+ * 
+ * This function handles the command line interface for the Sudogs program.
+ * It takes command line arguments and performs the corresponding actions.
+ * 
+ * @param argv The command line arguments.
+ */
 void cli(const char **argv) {
     if(strcmp(argv[1], "--help") == 0) {
         std::cout << "Usages: sudogs, sudogs --help, sudogs --gen [difficulty]\n\n"

@@ -1,6 +1,14 @@
 #include "sudoku_generator.h"
 #include "fill_grid.h"
 
+/**
+ * Generates a Sudoku puzzle with the specified difficulty level.
+ * The generated puzzle is stored in the given 2D array.
+ *
+ * @param sudoku The 2D array to store the generated Sudoku puzzle.
+ * @param difficulty The difficulty level of the Sudoku puzzle.
+ *                   The higher the difficulty level, the fewer empty cells in the puzzle.
+ */
 void generateSudoku(int sudoku[][SUDOKU_SIZE], int difficulty) {
     for (int i = 0; i < SUDOKU_SIZE; i++) {
         for (int j = 0; j < SUDOKU_SIZE; j++) {

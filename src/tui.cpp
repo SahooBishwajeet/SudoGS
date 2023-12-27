@@ -1,5 +1,14 @@
 #include "tui.h"
 
+/**
+ * @brief Gets the user's choice for the desired action.
+ * 
+ * This function displays a menu to the user and waits for their input.
+ * The user can choose to generate a Sudoku, solve a Sudoku, or exit the program.
+ * The function validates the user's input and repeats the menu until a valid choice is made.
+ * 
+ * @return The user's choice as an integer.
+ */
 int getChoice() {
     int choice;
 
@@ -19,6 +28,11 @@ int getChoice() {
     return choice;
 }
 
+/**
+ * @brief Prompts the user to enter a difficulty level for generating a Sudoku puzzle.
+ * 
+ * @return The difficulty level entered by the user (an integer between 1 and 5).
+ */
 int getDifficulty() {
     int difficulty;
 
@@ -45,6 +59,11 @@ int getDifficulty() {
     return difficulty;
 }
 
+/**
+ * Displays the solution of the Sudoku puzzle.
+ * 
+ * @param sudoku The Sudoku puzzle grid.
+ */
 void displaySolution(int sudoku[][SUDOKU_SIZE]) {
     char dispAll;  
 
