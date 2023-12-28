@@ -123,7 +123,7 @@ Directly generate Sudoku by using the gen flag
 ![SudoGS Direct Generation](gif/sudogsGen.gif)
 
 ```bash
-# Generate Sudoku direclty
+# Generate Sudoku directly
 # difficulty = [1,2,3,4,5]
 sudogs --gen [difficulty]
 ```
